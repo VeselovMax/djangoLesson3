@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            align-items: center;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            color: #ffffff;
+            background-color: #dd5151;
+            height: 100px;
+        }
+        h2 {
+            text-align: left;
+            color: #007BFF;
+        }
+        h3 {
+            text-align: left;
+            color: #000000;
+        }
+        p {
+            text-align: left;
+        }
+        a {
+            text-align: left;
+            color: #23dc4b;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Statistics</h1>
+    <h2>Total Greetings: {{ total_greetings }}</h2>
+    <h3><a href="{% url 'home' %}">Go back to home page</a></h3>
+    {% for name in names %}
+        {% if name %}
+            <p><a href="{% url 'stats_name' name=name %}"> stats for {{ name }} </a> </p>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

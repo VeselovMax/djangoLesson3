@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics for {{ name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            align-items: center;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            color: #ffffff;
+            background-color: #23dc4b;
+            height: 100px;
+        }
+        h2 {
+            text-align: left;
+            color: #dd5151;
+        }
+        p {
+            text-align: left;
+        }
+        a {
+            text-align: left;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Statistics for {{ name }}</h1>
+    <div class="greetings-log">
+        <h2>Greetings log:</h2>
+        {% for greeting in greetings %}
+            <p>{{ greeting.created_at }}</p>
+        {% endfor %}
+    </div>
+    <p><a href="{% url 'stats' %}">Go to general stats</a></p>
+    <p><a href="{% url 'home' %}">Go back to home page</a></p>
+</body>
+</html>
